@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" th:content="${htmlContent}" content="text/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style>
+        /*
+        :root {
+            --primary: #6495ed;
+            --secondary: #faf0e6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            background-color: #FFFFFF;
+        }
+
+        table {
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        strong {
+            background-color: yellow;
+        }
+
+        .logo {
+            display: block;
+            width: 170px;
+            height: 80px;
+        }
+
+        .containerLogo {
+            padding: 10px;
+            width: 170px;
+            height: 80px;
+        }
+
+        .containerInfoEmpresa {
+            width: 455px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .title0 {
+            font-size: 10px;
+            color: #ffffff;
+        }
+
+        .title0 a, .title0 a:hover {
+            font-size: 10px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .title1 {
+            font-weight: bold;
+            background-color: #D1D1D1;
+            padding: 1px;
+        }
+
+        .tdHeader {
+            margin: 0 auto;
+            max-width: 620px;
+            display: table;
+            width: 100%;
+            background-color: #D1D1D1;
+        }
+
+        .trBody {
+            background-color: #D9D9D9;
+        }
+
+        .rowSpace {
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            max-width: 620px;
+            height: 25px;
+        }
+
+        .tdBody {
+            margin: 0 auto;
+            display: table;
+            max-width: 620px;
+            width: 100%;
+            background-color: #FFF;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .textContent {
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+            text-align: left;
+            mso-line-height-alt: 18px;
+            margin: 0;
+            padding-left: 5px;
+        }
+
+        .titleCountPub {
+            font-weight: bold;
+            background-color: #D1D1D1;
+            padding: 2px;
+            margin-bottom: 20px;
+        }
+
+        .infoPub {
+            padding-left: 15px;
+        }
+
+        .titleInfoPub {
+            width: 165px;
+            font-weight: bold;
+            vertical-align: top;
+        }
+
+        .contentInfoPub {
+            padding-right: 15px;
+            vertical-align: top;
+            text-align: justify;
+        }
+
+        .destaqueVertical {
+            padding-top: 5px;
+        }
+
+        .titleAndamentos {
+            text-align: left;
+        }
+
+        .contentInfoPub ul {
+            margin: 0;
+            padding-left: 15px;
+            padding-right: 10px;
+        }
+
+        hr {
+            margin: 5px;
+            border-top: 2px solid #D1D1D1;
+        }
+
+        .trFooter {
+            background-color: #FFF;
+        }
+
+        .containerFooter {
+            margin: 0 auto;
+            display: table;
+            max-width: 620px;
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #000;
+        }
+
+        .textFooter {
+            margin-left: 10px;
+            margin-right: 10px;
+            text-align: justify;
+            color: #ffffff;
+            line-height: 1.2;
+            font-size: 8px;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        }
+
+        .textLocator {
+            margin: 0 auto;
+            text-align: center;
+            color: #ffffff;
+            line-height: 1.2;
+            font-size: 8px;
+            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        }
+        */
+    </style>
+</head>
+<body style="margin: 0; padding: 0; -webkit-text-size-adjust: 100%; background-color: #FFFFFF;">
+<table style="border-spacing: 0; width: 100%;">
+    <tbody>
+    <!-- HEADER -->
+    <tr style="background-color: #D9D9D9;">
+        <td style="padding: 0;">
+            <div style="margin: 0 auto; max-width: 620px; display: table; width: 100%; background-color: #D1D1D1;">
+                <div style="padding: 10px; width: 170px; height: 80px;">
+                    <img th:src="${urlThumbnail}" src="" style="display: block; width: 170px; height: 80px;">
+                </div>
+                <div style="width: 455px; display: table-cell; vertical-align: middle;">
+                    <p style="text-align: center; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.2; color: #555555; ">
+                       <span style="font-size: 10px; color: #ffffff;" th:text="${header0}">
+                                Lig Contato Soluções Jurídicas
+                       </span><br>
+                        <span style="font-size: 10px; color: #ffffff;" th:text="${header1}">
+                                Rua Marques do Baependi 120- Hipódromo - Recife (PE)
+                        </span><br>
+                        <span style="font-size: 10px; color: #ffffff;" th:text="${header2}">
+                                Fones: (81) 3242-2026 / (81) 9.9976-5923
+                        </span><br>
+                        <span style="font-size: 10px; color: #ffffff;" th:text="${header3}">
+                                ligcontato@ligcontato.com.br / www.ligcontato.com.br
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <!-- ALERTA -->
+    <tr style="background-color: #D9D9D9;">
+        <td>
+            <div style="margin: 0 auto; display: table; max-width: 620px; width: 100%; background-color: #FFF;">
+                <div
+                    style="display: flex; flex-direction: column; justify-content: center; justify-items: center; margin: 10px; color: darkred; background-color: lemonchiffon; padding: 10px;">
+                    <p style="text-align: center; margin: 0px; font-weight: bold; font-size: 12px; ">
+                        *Atenção*
+                    </p>
+                    <p style="text-align: center; margin: 0px; font-size: 10px; ">
+                        Esta mensagem pode conter mais conteúdo no corpo do e-mail, portanto verifique no final
+                        da mensagem se existe a opção de "Exibir toda a mensagem" para visualizar mais conteúdo.
+                    </p>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <!-- INFO CLIENTE -->
+    <tr style="background-color: #D9D9D9;">
+        <td>
+            <div
+                style="margin: 0 auto; display: table; max-width: 620px; width: 100%; background-color: #FFF; padding-top: 5px; padding-bottom: 5px;">
+                <p style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5; text-align: left; mso-line-height-alt: 18px; margin: 0; padding-left: 5px;">
+                    <span style="font-weight: bold; background-color: #D1D1D1; padding: 1px;">Cliente:</span>
+                     <span th:text="${listprocessos}">--</span>
+                 </p>
+                 <p style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5; text-align: left; mso-line-height-alt: 18px; margin: 0; padding-left: 5px;">
+                     <span style="font-weight: bold; background-color: #D1D1D1; padding: 1px;">Distribuições:</span>
+                     <span th:text="${listprocessos.size}">--</span>
+                </p>
+                <p style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5; text-align: left; mso-line-height-alt: 18px; margin: 0; padding-left: 5px;">
+                    <span style="font-weight: bold; background-color: #D1D1D1; padding: 1px;">Localizador:</span>
+                    <span th:text="${listprocessos.localizador}">--</span>
+                </p>
+            </div>
+        </td>
+    </tr>
+    <!-- DIVIDER -->
+    <tr style="background-color: #D9D9D9;">
+        <td>
+            <div
+                style="margin: 0 auto; display: table; max-width: 620px; width: 100%; background-color: #FFF; padding-top: 5px; padding-bottom: 5px;">
+                <hr style=" margin: 5px; border-top: 2px solid #D1D1D1;"/>
+            </div>
+        </td>
+    </tr>
+    <!-- LAWSUITS -->
+      <tr style="background-color: #D9D9D9;" th:each="p,d : ${listprocessos}">
+          <td>
+              <div
+                  style="margin: 0 auto; display: table; max-width: 620px; width: 100%; background-color: #FFF; padding-top: 5px; padding-bottom: 5px;">
+                  <table
+                      style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 12px; line-height: 1.5; text-align: left; mso-line-height-alt: 18px; margin: 0; padding-left: 15px;">
+                      <tr>
+                          <td>
+                              <div>
+                                      <span
+                                          style="font-weight: bold; background-color: #D1D1D1; padding: 2px; margin-bottom: 20px;">
+                                          Distribuição
+                                              <span th:text="${d.index + 1}"></span>
+                                              de
+                                           <span th:text="${listprocessos.size}"></span>
+                                       </span>
+                                   <!-- Input Hidden Data -->
+                                <input type="hidden" name="dateCreated">
+                                  <!--       th:value="${#dates.format(dateCreated, 'dd/MM/yyyy')} "/> -->
+                                   </div>
+                               </td>
+                           </tr>
+                           <tr>
+                               <td style="width: 165px; font-weight: bold; vertical-align: top;">Data Distribuição:</td>
+                                       <td th:text="${#dates.format(p.Processo.dataDistribuicao, 'dd/MM/yyyy')}">--</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 165px; font-weight: bold; vertical-align: top;">Tribunal:</td>
+                        <td th:text="${p.Processo.tribunal}">--</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 165px; font-weight: bold; vertical-align: top;">Vara:</td>
+                        <td th:text="${p.Processo.orgaoJulgador}">--</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 165px; font-weight: bold; vertical-align: top;">UF / Instância / Comarca:</td>
+                        <td>
+                            <span th:text="${p.Processo.uf}"></span> /
+                            <span th:text="${p.Processo.instancia}"></span> /
+                            <span th:text="${p.Processo.comarca}"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 165px; font-weight: bold; vertical-align: top;">Número Processo:</td>
+                        <td th:text="${p.Processo.numeroProcesso}">--</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Polo Ativo:</td>
+                        <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
+                        <!--  th:text="${p.nome}">-- -->
+                  </td>
+              </tr>
+              <tr>
+                  <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Polo Passivo:</td>
+                  <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
+                   <!--  th:text="${p.reus}"> -->
+                  </td>
+           </tr>
+           <tr>
+               <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Link:</td>
+               <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
+               <!--     th:text="${ls.link}">-- -->
+                        </td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+            <p style="margin: 0 auto; background-color: #FFFFFF; max-width: 620px;height: 25px;">&nbsp;</p>
+        </td>
+    </tr>
+    </tbody>
+    <!-- FOOTER -->
+    <tfoot>
+    <tr style="background-color: #FFF;">
+        <td>
+            <div style="margin: 0 auto; display: table; max-width: 620px; width: 100%; padding-top: 10px; padding-bottom: 10px; background-color: #000;">
+                <p style="margin-left: 10px; margin-right: 10px; text-align: justify; color: #ffffff; line-height: 1.2; font-size: 8px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                    Esta mensagem constitui informação privilegiada e confidencial, legalmente
+                    resguardada por segredo profissional, nos termos do art. 7º, inc. II, e ss. da lei nº 8.906/94,
+                    referindo-se exclusivamente ao relacionamento pessoal e profissional entre o remetente e o
+                    destinatário, sendo vedada a utilização, divulgação ou reprodução do seu conteúdo
+                </p>
+                <!--
+                <p style="margin: 0 auto; text-align: center; color: #ffffff; line-height: 1.2; font-size: 8px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;">
+                    Localizador: <span th:text="${locator}">--</span>
+                </p>
+                -->
+            </div>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+</html>
