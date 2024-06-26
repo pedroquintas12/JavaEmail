@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 public class Processo_autor {
+
     @ManyToOne
     @JoinColumn(name = "ID_processo")
     private Processo ID;

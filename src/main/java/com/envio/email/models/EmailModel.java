@@ -1,21 +1,29 @@
 package com.envio.email.models;
 
+import com.envio.email.core.AbstractPersistableCustom;
 import com.envio.email.enums.StatusEmail;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.hibernate.annotations.Where;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor
+@Getter
+@Setter
+@SuperBuilder
 
 @Data
 @Entity
-@Table(name="EMAIL")
-public class EmailModel implements Serializable {
+@Table(name="email")
+@AttributeOverride(name = "id", column = @Column(name = "id_email"))
+@Where(clause = "deleted=0")
+public class EmailModel extends AbstractPersistableCustom<Long> implements Serializable{
+
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long ID_EMAIL;
     private String ownerRef;
     private String emailFrom;
     private String emailTo;
@@ -25,14 +33,6 @@ public class EmailModel implements Serializable {
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
 
-
-    public long getID_EMAIL() {
-        return ID_EMAIL;
-    }
-
-    public void setID_EMAIL(long ID_EMAIL) {
-        this.ID_EMAIL = ID_EMAIL;
-    }
 
     public String getOwnerRef() {
         return ownerRef;

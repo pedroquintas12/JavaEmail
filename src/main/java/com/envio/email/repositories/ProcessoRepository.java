@@ -5,8 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ProcessoRepository extends JpaRepository<Processo, Integer> {
+public interface ProcessoRepository extends BaseRepository<Processo, Integer> {
+
     List<Processo> findByStatusAndCodEscritorio(String status, Integer codEscritorio);
+
+    List<Processo> findAll();
 
 
 }

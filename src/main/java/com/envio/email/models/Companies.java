@@ -19,7 +19,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 // * JPA
 @Entity
 @Table(name = "companies")
-@AttributeOverride(name = "Id", column = @Column(name = "id_companies"))
+@AttributeOverride(name = "id", column = @Column(name = "id_companies"))
 @Where(clause = "deleted=0")
 public class Companies extends AbstractPersistableCustom<Long> {
 

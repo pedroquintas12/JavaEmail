@@ -28,29 +28,32 @@ public class AutorReuService {
     }
 
     public List<ProcessoDTO> buscarAutoresReusPorParametros(String status, Integer codEscritorio) {
-        // Gerar um localizador aleatório
         String localizador = UUID.randomUUID().toString();
 
-        // Buscar processos com base nos parâmetros fornecidos
         List<Processo> processos = processoRepository.findByStatusAndCodEscritorio(status, codEscritorio);
 
-        // Inicializar lista para armazenar DTOs de processo
         List<ProcessoDTO> autorReuDTOList = new ArrayList<>();
 
-        // Iterar sobre os processos encontrados
         for (Processo processo : processos) {
-            // Verificar se o processo pertence ao mesmo escritório
             if (processo.getCodEscritorio().equals(codEscritorio)) {
-                // Buscar autores e réus correspondentes para o processo atual
                 List<Processo_autor> autores = autorRepository.findByID(processo);
                 List<Processo_reu> reus = reuRepository.findByID(processo);
 
-                // Criar DTO de processo com autores e réus encontrados e adicionar à lista
                 ProcessoDTO dto = new ProcessoDTO();
                 dto.setID_Processo(processo.getID_processo());
                 dto.setAutores(autores);
                 dto.setReus(reus);
-                dto.setLocalizador(localizador); // Definir o localizador no DTO
+                dto.setCidade(processo.getCidade());
+                dto.setOrgaoJulgador(processo.getOrgaoJulgador());
+                dto.setComarca(processo.getComarca());
+                dto.setDataDistribuicao(processo.getDataDistribuicao());
+                dto.setInstancia(processo.getInstancia());
+                dto.setNumeroProcesso(processo.getNumeroProcesso());
+                dto.setSiglaSistema(processo.getSiglaSistema());
+                dto.setUf(processo.getUf());
+                dto.setCodEscritorio(processo.getCodEscritorio());
+                dto.setTribunal(processo.getTribunal());
+                dto.setLocalizador(localizador);
                 autorReuDTOList.add(dto);
             }
         }

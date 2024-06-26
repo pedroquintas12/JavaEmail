@@ -30,7 +30,7 @@ public abstract class AbstractPersistableCustom<ID extends Serializable> impleme
     @Id
     @Column (nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private ID Id;
+    private ID id;
 
     @JsonIgnore
     @Column(nullable = false)
@@ -60,11 +60,11 @@ public abstract class AbstractPersistableCustom<ID extends Serializable> impleme
     private Date modifiedDate;
 
     public ID getId() {
-        return Id;
+        return id;
     }
 
     protected void setId(final ID Id) {
-        this.Id = Id;
+        this.id = Id;
     }
 
     public Long isDeleted() {

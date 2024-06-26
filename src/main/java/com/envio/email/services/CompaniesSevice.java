@@ -19,15 +19,11 @@ public class CompaniesSevice {
 
 
     private final CompaniesRepository repository;
-    private final ModelMapper modelMapper;
-
 
     public CompaniesSevice(
-            CompaniesRepository repository,
-            ModelMapper modelMapper
+            CompaniesRepository repository
     ) {
         this.repository = repository;
-        this.modelMapper = modelMapper;
     }
 
 
