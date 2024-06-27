@@ -1,20 +1,37 @@
 package com.envio.email.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 @Entity
 public class Processo_docinicial {
+
+    @ManyToOne
+    @JoinColumn(name = "ID_processo")
+    private Processo ID;
     @Id
-    private int ID_DocInicial;
+    @Column(name = "ID_DocIncial")
+    private Long ID_DocInicial;
+
+    @Column(name = "linkDocumento", columnDefinition = "TEXT")
     private String linkDocInicial;
+
+    @Column(name = "docPeticaoInicial")
     private Boolean docPeticaoInicial;
 
-    public int getID_DocInicial() {
+    public Long getID_DocInicial() {
         return ID_DocInicial;
     }
 
-    public void setID_DocInicial(int ID_DocInicial) {
+    public void setID_DocInicial(Long ID_DocInicial) {
         this.ID_DocInicial = ID_DocInicial;
+    }
+
+    public Processo getID() {
+        return ID;
+    }
+
+    public void setID(Processo ID) {
+        this.ID = ID;
     }
 
     public String getLinkDocInicial() {

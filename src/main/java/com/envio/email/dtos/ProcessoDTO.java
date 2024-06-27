@@ -1,8 +1,6 @@
 package com.envio.email.dtos;
 
-import com.envio.email.models.Processo;
-import com.envio.email.models.Processo_autor;
-import com.envio.email.models.Processo_reu;
+import com.envio.email.models.*;
 import jakarta.persistence.Column;
 
 import java.sql.Date;
@@ -15,7 +13,6 @@ public class ProcessoDTO {
 
     private List<Processo_autor> autores;
     private List<Processo_reu> reus;
-    private String localizador;
     @Column(name = "codEscritorio")
     private Integer codEscritorio;
     private String numeroProcesso;
@@ -27,6 +24,9 @@ public class ProcessoDTO {
     private Date dataDistribuicao;
     private String cidade;
     private String uf;
+    private List<Cliente> clientes;
+    private List<Processo_docinicial> link;
+    private String tipoProcesso;
 
 
 
@@ -35,7 +35,7 @@ public class ProcessoDTO {
 
     public ProcessoDTO(Integer idProcesso, List<Processo_autor> autores, List<Processo_reu> reus, Integer codEscritorio, String numeroProcesso,
                        Integer instancia, String tribunal, String siglaSistema, String comarca, String orgaoJulgador, Date dataDistribuicao, String cidade,
-                        String uf, String localizador) {
+                        String uf, List<Processo_docinicial> link, List<Cliente> clientes, String tipoProcesso) {
         this.ID_Processo = Math.toIntExact(idProcesso);
         this.autores = autores;
         this.reus = reus;
@@ -45,11 +45,13 @@ public class ProcessoDTO {
         this.dataDistribuicao = dataDistribuicao;
         this.instancia = instancia;
         this.numeroProcesso = numeroProcesso;
-        this.localizador= localizador;
         this.orgaoJulgador = orgaoJulgador;
         this.siglaSistema = siglaSistema;
         this.tribunal= tribunal;
         this.uf = uf;
+        this.link= link;
+        this.clientes = clientes;
+        this.tipoProcesso = tipoProcesso;
 
     }
 
@@ -77,13 +79,6 @@ public class ProcessoDTO {
         this.reus = reus;
     }
 
-    public String getLocalizador() {
-        return localizador;
-    }
-
-    public void setLocalizador(String localizador) {
-        this.localizador = localizador;
-    }
 
     public Integer getCodEscritorio() {
         return codEscritorio;
@@ -164,5 +159,33 @@ public class ProcessoDTO {
 
     public void setNumeroProcesso(String numeroProcesso) {
         this.numeroProcesso = numeroProcesso;
+    }
+
+    public Date getDataDistribuicao() {
+        return dataDistribuicao;
+    }
+
+    public List<Processo_docinicial> getLink() {
+        return link;
+    }
+
+    public void setLink(List<Processo_docinicial> link) {
+        this.link = link;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public String getTipoProcesso() {
+        return tipoProcesso;
+    }
+
+    public void setTipoProcesso(String tipoProcesso) {
+        this.tipoProcesso = tipoProcesso;
     }
 }
