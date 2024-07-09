@@ -47,6 +47,9 @@ public class Companies extends AbstractPersistableCustom<Long> {
     @Column(name = "smtp_password")
     private String smtpPassword;
 
+    @Column(name = "url_thumbnail")
+    private String urlThumbnail;
+
     public String getSolucionareDistribuicaoNomeRelacional() {
         return solucionareDistribuicaoNomeRelacional;
     }
@@ -109,5 +112,13 @@ public class Companies extends AbstractPersistableCustom<Long> {
 
     public void setSmtpPassword(String smtpPassword) {
         this.smtpPassword = smtpPassword;
+    }
+
+    public String getUrlThumbnail() {
+        return urlThumbnail;
+    }
+
+    public void setUrlThumbnail(String urlThumbnail) {
+        this.urlThumbnail = urlThumbnail;
     }
 }
