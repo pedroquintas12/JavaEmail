@@ -13,6 +13,5 @@ import java.util.List;
 @Repository
 public interface DocInicialRepository extends JpaRepository<Processo_docinicial, Long> {
 
-    @Query("SELECT d FROM Processo_docinicial d WHERE d.processo.id = :processoId AND d.doc_peticao_inicial = 0")
-    List<Processo_docinicial> findByProcessoIdAndDocPeticaoInicialIsZero(@Param("processoId") Long processoId);
+    List<Processo_docinicial> findByIDAndDocPeticaoInicial(Processo processo, Boolean docPeticaoInicial);
 }

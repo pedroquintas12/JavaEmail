@@ -36,7 +36,7 @@
                 if (processo.getCodEscritorio().equals(codEscritorio)) {
                     List<Processo_autor> autores = autorRepository.findByID(processo);
                     List<Processo_reu> reus = reuRepository.findByID(processo);
-                    List<Processo_docinicial> link = docInicialRepository.findByProcessoIdAndDocPeticaoInicialIsZero(processo.getID_processo());
+                    List<Processo_docinicial> link = docInicialRepository.findByIDAndDocPeticaoInicial(processo,false);
 
 
                     ProcessoDTO dto = new ProcessoDTO();

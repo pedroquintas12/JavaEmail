@@ -11,10 +11,6 @@ public class ProcessoService {
         @Autowired
         private ProcessoRepository processoRepository;
 
-            public List<Processo> buscarTodosProcessos() {
-                return processoRepository.findByStatusAndCodEscritorio("P",1172);
-        }
-
 
 
 
