@@ -34,7 +34,7 @@ public class IndexController {
     @GetMapping("/")
     public String DadosProcesso(Model model, @RequestParam(required = false) String status, @RequestParam(required = false) Integer codEscritorio) {
 
-        List<ProcessoDTO> autorReuDTOList = autorReuService.buscarAutoresReusPorParametros("P", 1388);
+        List<ProcessoDTO> autorReuDTOList = autorReuService.buscarAutoresReusPorParametros("P", 1165);
         if (!autorReuDTOList.isEmpty()) {
             Integer codEscritorioDoDTO = autorReuDTOList.get(0).getCodEscritorio();
             List<Cliente>clientes = clienteService.BuscarPorEscritorio(codEscritorioDoDTO);

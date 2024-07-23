@@ -320,12 +320,16 @@
                   </div>
                   </td>
            </tr>
-                      <tr>
-                          <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Link:</td>
-                          <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
-        <span th:each="link : ${p.link}">
-          <a th:href="${link.linkDocInicial}"><span th:text="${p.tipoProcesso}"> </a>  <br/>
-        </span>
+            <tr>
+                 <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Link:</td>
+                  <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
+                <span th:each="link : ${p.link}">
+                  <a th:href="${link.linkDocInicial}" target="_blank">
+                      <span th:utext="${p.tipoProcesso}"> </span>
+                      (<span th:text="${link.ID_DocInicial}"/>)
+                  </a>
+                    <br/>
+
                           </td>
                       </tr>
 
