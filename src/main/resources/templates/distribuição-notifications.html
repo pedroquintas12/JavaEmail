@@ -321,22 +321,17 @@
                   </td>
            </tr>
             <tr>
-                 <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Link:</td>
+                <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Link:</td>
                   <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
-                <span th:each="link : ${p.link}">
+                <span th:each="link : ${Link}">
                   <a th:href="${link.linkDocInicial}" target="_blank">
                       <span th:utext="${p.tipoProcesso}"> </span>
-                      (<span th:text="${link.ID_DocInicial}"/>)
+                     (<span th:text="${link.ID_DocInicial}"/>)
                   </a>
-                    <br/>
-
-                          </td>
-                      </tr>
-
-
-
-
-
+                    </br>
+                </span>
+                  </td>
+            </tr>
                 </table>
             </div>
             <p style="margin: 0 auto; background-color: #FFFFFF; max-width: 620px;height: 25px;">&nbsp;</p>

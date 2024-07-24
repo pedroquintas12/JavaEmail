@@ -25,6 +25,7 @@ public class ProcessoDTO {
     private String cidade;
     private String uf;
     private List<Cliente> clientes;
+
     private List<Processo_docinicial> link;
     private String tipoProcesso;
 

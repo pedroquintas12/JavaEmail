@@ -1,6 +1,8 @@
 package com.envio.email.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Processo_docinicial {
@@ -17,6 +19,9 @@ public class Processo_docinicial {
 
     @Column(name = "docPeticaoInicial")
     private Boolean docPeticaoInicial;
+
+    @Column(name = "deleted")
+    private Integer deleted;
 
     public Long getID_DocInicial() {
         return ID_DocInicial;
@@ -49,4 +54,13 @@ public class Processo_docinicial {
     public void setDocPeticaoInicial(Boolean docPeticaoInicial) {
         this.docPeticaoInicial = docPeticaoInicial;
     }
+
+    public Integer getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(Integer deleted) {
+        this.deleted = deleted;
+    }
+
 }
