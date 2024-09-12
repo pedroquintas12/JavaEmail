@@ -35,15 +35,17 @@ public class IndexController {
 
     @GetMapping("/")
     public String DadosProcesso(Model model, @RequestParam(required = false) String status, @RequestParam(required = false) Integer codEscritorio) {
-        List<ProcessoDTO> autorReuDTOList = autorReuService.buscarAutoresReusPorParametros("P", 1165);
+        List<ProcessoDTO> autorReuDTOList = autorReuService.buscarAutoresReusPorParametros("P", 1303);
 
         if (!autorReuDTOList.isEmpty()) {
             Integer codEscritorioDoDTO = autorReuDTOList.get(0).getCodEscritorio();
             List<Cliente>clientes = clienteService.BuscarPorEscritorio(codEscritorioDoDTO);
             model.addAttribute("cliente", clientes);
         }
+        //Limita os links exibidos em tela
         List<Processo_docinicial> links = autorReuDTOList.get(0).getLink();
-        var limiteLinks = 3;
+        var limiteLinks = 5;
+
         if (links.size()> limiteLinks){
                 links = links.subList(0, limiteLinks);
         }
