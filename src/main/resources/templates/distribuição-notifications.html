@@ -276,7 +276,7 @@
                                        </span>
                                    <!-- Input Hidden Data -->
                                 <input type="hidden" name="dateCreated">
-                                  <!--       th:value="${#dates.format(dateCreated, 'dd/MM/yyyy')} "/> -->
+                                   <!--   <td  th:value="${#dates.format(p.data_insercao, 'dd/MM/yyyy')} "/> -->
                                    </div>
                                </td>
                            </tr>
@@ -304,23 +304,27 @@
                         <td style="width: 165px; font-weight: bold; vertical-align: top;">Número Processo:</td>
                         <td th:text="${p.numeroProcesso}">--</td>
                     </tr>
-                    <tr>
+                      <tr>
                         <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Polo Ativo:</td>
                         <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
-                        <div th:each="autor : ${p.autores}">
-                            <span th:text="${autor.nome}">--</span><br/>
+                        <div th:each="Autor : ${Autor}">
+                            <span th:text="${Autor.nome}">--</span>
+                            <span  th:if="${#lists.size(p.autores) != 1 }"  th:text="'(+' + ${#lists.size(p.autores)-1} + ')'" />
                         </div>
                         </td>
               </tr>
-              <tr>
-                  <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Polo Passivo:</td>
-                  <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
-                  <div th:each="reus : ${p.reus}">
-                      <span th:text="${reus.nome}">--</span><br/>
-                  </div>
-                  </td>
-           </tr>
-            <tr>
+                      <tr>
+                          <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Polo Passivo:</td>
+                          <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
+                              <div th:each="Reu : ${Reu}">
+                                  <span th:text="${Reu.nome}"></span>
+                                  <span  th:if="${#lists.size(p.reus) != 1 }"  th:text="'(+' + ${#lists.size(p.reus)-1} + ')'" />
+
+                              </div>
+
+                          </td>
+                      </tr>
+                      <tr>
                 <td style="width: 165px; font-weight: bold; vertical-align: top; padding-top: 5px;">Link:</td>
                   <td style="padding-right: 15px; vertical-align: top; text-align: justify; padding-top: 5px;">
                 <span th:each="link : ${Link}">
@@ -332,7 +336,7 @@
                 </span>
                   </td>
             </tr>
-                </table>
+                  </table>
             </div>
             <p style="margin: 0 auto; background-color: #FFFFFF; max-width: 620px;height: 25px;">&nbsp;</p>
         </td>
